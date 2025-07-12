@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb87vsykhdrp8"]
+
+[ext_resource type="PackedScene" uid="uid://brj7si268gext" path="res://Scenes/hand.tscn" id="2_fehfv"]
+[ext_resource type="PackedScene" uid="uid://cc20pjlo1yrmw" path="res://Scenes/snapper.tscn" id="2_nek7h"]
+
+[node name="battle_area" type="Node2D"]
+
+[node name="snapper" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(203, 172)
+
+[node name="snapper2" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(917, 179)
+
+[node name="snapper3" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(775, 177)
+
+[node name="snapper4" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(632, 176)
+
+[node name="snapper5" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(486, 171)
+
+[node name="snapper6" parent="." instance=ExtResource("2_nek7h")]
+position = Vector2(345, 177)
+
+[node name="Hand" parent="." instance=ExtResource("2_fehfv")]
+position = Vector2(535, 672)
