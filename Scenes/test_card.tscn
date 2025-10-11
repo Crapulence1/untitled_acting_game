@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcnd7nd0pu4bu"]
 
 [ext_resource type="Texture2D" uid="uid://csniykwuxojkl" path="res://icon.svg" id="1_frajv"]
-[ext_resource type="PackedScene" uid="uid://d37n08byp7fuv" path="res://Scenes/dragger.tscn" id="2_pdxn3"]
+[ext_resource type="PackedScene" uid="uid://d37n08byp7fuv" path="res://Scenes/Character/Player/dragger.tscn" id="2_pdxn3"]
 
 [node name="test_card" type="Node2D"]
 z_index = 10

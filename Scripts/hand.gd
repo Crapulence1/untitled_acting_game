@@ -1,5 +1,5 @@
 extends Node2D
-var card_preset = preload("res://Scenes/card.tscn")
+var card_preset = preload("res://Scenes/Character/Player/card.tscn")
 var hand_array : Array = []
 var selected_card : Node2D = null # card that is being dragged and is not in hand or snapped
 var selected_card_index : int = 0 # index of selected card in hand_array
@@ -30,8 +30,8 @@ func add_card(card: Node2D) -> void :
 func remove_card_from_hand(card: Node2D) -> void:
 	hand_array.erase(card)
 
-func add_card_to_hand(card: Node2D) -> void:
-	hand_array.insert(card.hand_index, card)
+#func add_card_to_hand(card: Node2D) -> void:
+#	hand_array.insert(card.hand_index, card)
 
 func check_each_card() -> void:
 	for i in range(all_cards_size):

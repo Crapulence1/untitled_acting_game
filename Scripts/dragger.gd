@@ -2,7 +2,7 @@ extends Node2D
 
 var is_inside_snapper : bool = false
 var selected : bool = false
-var card = preload("res://Scenes/hand.tscn")
+var card = preload("res://Scenes/Character/Player/hand.tscn")
 var rest_point : Vector2 = Vector2(0,0)
 var hovered : bool = false
 var cards = null
@@ -11,13 +11,13 @@ var snapped : bool = false
 var is_top_card : bool = false
 var can_be_selected : bool = false
 var overlapped_snappers : Array = []
+var snappable : bool = false
 
 func _ready():
 	cards = get_tree().get_nodes_in_group("card")
 	card_count = cards.size()
 
 func _process(delta):
-	#print(card_count)
 	if overlapped_snappers.size() == 0:
 		snapped = false
 	if selected and hovered:
@@ -40,11 +40,13 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and hovered and is_top_card:
 			selected = true
+			snappable = true
 		else:
 			selected = false
+			snappable = true
 
 func _on_area_2d_body_entered(body: StaticBody2D) -> void:
-	if body.dedicated_card == null:
+	if body.dedicated_card == null and snappable == true:
 		body.dedicated_card = self
 		rest_point = body.global_position
 		snapped = true
