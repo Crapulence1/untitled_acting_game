@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm05ybll3rapk"]
+
+[ext_resource type="Script" uid="uid://cvi7rfqcc2fwq" path="res://Scripts/hand.gd" id="1_f6hnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7o8q"]
+size = Vector2(429, 197.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6hnx"]
+size = Vector2(264, 133)
+
+[node name="hand" type="Node2D"]
+script = ExtResource("1_f6hnx")
+
+[node name="final" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="final"]
+shape = SubResource("RectangleShape2D_u7o8q")
+
+[node name="initial" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="initial"]
+shape = SubResource("RectangleShape2D_f6hnx")
+
+[connection signal="mouse_exited" from="final" to="." method="_on_final_mouse_exited"]
+[connection signal="mouse_entered" from="initial" to="." method="_on_initial_mouse_entered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp140fkk1egye"]
+
+[ext_resource type="Texture2D" uid="uid://csniykwuxojkl" path="res://icon.svg" id="1_0qqmn"]
+[ext_resource type="Script" uid="uid://g6fe6bptssmc" path="res://Scripts/card.gd" id="1_wf8id"]
+[ext_resource type="Script" uid="uid://dkxusngptxkmb" path="res://Scripts/cardName.gd" id="3_brehn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wf8id"]
+size = Vector2(166, 272)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_wf8id")
+cardName = "Boobs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.26563, 2.10938)
+texture = ExtResource("1_0qqmn")
+
+[node name="dragger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dragger"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wf8id")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -53.0
+offset_top = -125.0
+offset_right = 29.045
+offset_bottom = -97.0
+scale = Vector2(1.305, 1.305)
+theme_override_font_sizes/font_size = 20
+text = "ddsD"
+script = ExtResource("3_brehn")
+
+[connection signal="mouse_entered" from="dragger" to="." method="_on_dragger_mouse_entered"]
+[connection signal="mouse_exited" from="dragger" to="." method="_on_dragger_mouse_exited"]

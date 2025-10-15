@@ -1,9 +1,9 @@
-extends StaticBody2D
-var has_card : bool = false
-var dedicated_card : Node2D = null
+extends Label
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	text = $"..".cardName
 	pass # Replace with function body.
 
 

@@ -1,9 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://bq10uwvqlbha1"]
 
-[ext_resource type="Script" uid="uid://c713t27320iot" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[sub_resource type="GDScript" id="GDScript_erv1k"]
+script/source = "extends Node2D
+
+func _on_play_pressed() -> void:
+	var new_scene = load(\"res://Scenes/battleArea.tscn\")
+	get_tree().change_scene_to_packed(new_scene)
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
 
 [node name="Main Menu" type="Node2D"]
-script = ExtResource("1_28flt")
+script = SubResource("GDScript_erv1k")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 135.0
